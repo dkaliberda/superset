@@ -23,6 +23,7 @@ from superset.superset_typing import FlaskResponse
 @app.route("/health")
 @app.route("/healthcheck")
 @app.route("/ping")
+@app.route("/heartbeat")
 def health() -> FlaskResponse:
     stats_logger: BaseStatsLogger = app.config["STATS_LOGGER"]
     stats_logger.incr("health")
